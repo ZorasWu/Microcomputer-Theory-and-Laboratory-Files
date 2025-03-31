@@ -33,7 +33,7 @@ SERIAL_ISR:
 
     MOV A, SBUF       ; 讀取接收的 ASCII 字元
     CALL numeralTest  ; 判斷是否為數字 (結果存在 C)
-    JNC ignore        ; 如果 C=0 (不是數字)，就忽略
+   ; JNC ignore        ; 如果 C=0 (不是數字)，就忽略
 
     MOV SBUF, A       ; 如果是數字，就傳回該字元
     JNB TI, endISR   ; 確保 TI 清除 (若有需要)
